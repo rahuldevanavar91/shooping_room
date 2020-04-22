@@ -2,8 +2,6 @@
     <string name="app_name">Shopping</string>
     <string name="rupee">\u20A8</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="product_id">product_id</string>
     <string name="item_in_cart">Item in cart</string>
     <string name="add_to_cart">Add to cart</string>
