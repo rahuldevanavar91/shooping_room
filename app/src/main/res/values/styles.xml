@@ -1,0 +1,52 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="AppTheme.Toolbar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:actionMenuTextColor">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+
+    </style>
+
+    <style name="body">
+        <item name="android:textSize">@dimen/_16dp</item>
+        <item name="fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="body_bold">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/_16dp</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+
+    </style>
+
+    <style name="medium">
+        <item name="android:textSize">@dimen/_14dp</item>
+        <item name="fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="mediumBold">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/_14dp</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="small">
+        <item name="android:textSize">@dimen/_12dp</item>
+        <item name="fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="smallBold" parent="small">
+        <item name="fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <dimen name="_16dp">16dp</dimen>
+    <dimen name="_12dp">12dp</dimen>
+</resources>

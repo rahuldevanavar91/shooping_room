@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Shopping</string>
+    <string name="rupee">\u20A8</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="product_id">product_id</string>
+    <string name="item_in_cart">Item in cart</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="remove">REMOVE</string>
+    <string name="total_mrp">Total MRP</string>
+    <string name="your_cart_is_empty">Your cart is empty</string>
+    <string name="proceed_to_pay">Proceed TO PAY</string>
+    <string name="name">Name*</string>
+    <string name="house_no_building_name">House No.,Building Name</string>
+    <string name="pincode">PinCode*</string>
+    <string name="enter_name">Name</string>
+    <string name="save">Save</string>
+    <string name="enter_phone">"Enter 10 digit phone number*"</string>
+    <string name="city">City*</string>
+    <string name="state">State*</string>
+    <string name="landmark">Landmark</string>
+    <string name="name_empty_error_message">Name can\'t be empty</string>
+    <string name="address_error">Address can\'t be empty</string>
+    <string name="pinco_error">Pin must  be 6 digits</string>
+    <string name="city_error">City can\'t be empty</string>
+    <string name="state_error">Sate can\'t be empty</string>
+    <string name="add_new_address">Add new address</string>
+    <string name="no_saved_address_found">No saved address found</string>
+    <string name="address_id">address_id</string>
+    <string name="your_order_place_successfully">Thanks for shopping\nYour order place successfully</string>
+    <string name="cart">Cart</string>
+    <string name="address">Address</string>
+    <string name="add_address">New Address</string>
+    <string name="Payment">Payment</string>
+    <string name="order_confirm">Order confirm</string>
+    <string name="facebook_app_id">224146232178093</string>
+    <string name="fb_login_protocol_scheme">fb224146232178093</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="order_id">Order Id</string>
+    <string name="date">Place on</string>
+    <string name="no_order_found">No order found</string>
+    <string name="description">Description</string>
+    <string name="my_orders">My Orders</string>
+    <string name="pay_on_delivery">Pay on delivery</string>
+    <string name="contine_shopping">Continue shopping</string>
+    <string name="login">Login</string>
+    <string name="phone_error">Phone number must be 10 digits</string>
+    <string name="product_added_to_cart">Product added to cart</string>
+
+</resources>

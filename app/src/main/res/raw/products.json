@@ -1,0 +1,103 @@
+{
+  "products": [
+    {
+      "product_id": "1001",
+      "thumb_image": "https://media6.ppl-media.com/tr:h-235,w-235,c-at_max/static/img/product/96052/plum-green-tea-pore-cleansing-face-wash-75-ml_1_display_1445325847_08b2cded.jpg",
+      "image": [
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/96052/plum-green-tea-pore-cleansing-face-wash-75-ml_1_display_1445325847_08b2cded.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/96052/plum-green-tea-pore-cleansing-face-wash-75-ml_2_display_1579959174_ba637c57.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/96052/plum-green-tea-pore-cleansing-face-wash-75-ml_4_display_1580911807_c8911862.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/96052/plum-green-tea-pore-cleansing-face-wash-75-ml_5_display_1580911807_35fbb8b8.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/96052/plum-green-tea-pore-cleansing-face-wash-75-ml_6_display_1580911808_0056e63f.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/96052/plum-green-tea-pore-cleansing-face-wash-75-ml_7_display_1580911809_a5afaca5.jpg"
+      ],
+      "name": "Plum Green Tea Pore Cleansing Face Wash (75 ml)",
+      "desc": "You will love the gently foaming, refreshing experience of this face wash, coupled with the mild exfoliation and an unbeatable green tea fragrance that leaves you feeling refreshed and energized. Especially suitable for acne prone skin, with goodness of glycolic acid and green tea to keep acne at bay.",
+      "about_brand": "Plum is India's foremost 100% vegan beauty brand, with a defined purpose of adding goodness to the world we live in. Inspired by global best practices in safe natural cosmetics and beauty solutions, Plum is focused on restoring and maintaining your skin, hair, and body as nature made it be. Designed in a London studio, Plum products are 100% vegan and cruelty-free. Besides being PETA-certified vegan & cruelty-free, Plum products are always free of parabens, phthalates, Propylene Glycol, SLS, PABA, DEA, and other harmful chemicals. Marrying science and product expertise with an innate love for nature, welcome to Plum. Take in the goodness!",
+      "price": 468,
+      "offer_price": 300,
+      "offer_label": 35
+    },
+    {
+      "product_id": "1002",
+      "thumb_image": "https://media6.ppl-media.com/tr:h-235,w-235,c-at_max/static/img/product/184164/cetaphil-gentle-skin-cleanser-125-ml-21-12_3_display_1568180147_02b5167e.jpg",
+      "image": [
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/184164/cetaphil-gentle-skin-cleanser-125-ml-21-12_3_display_1568180147_02b5167e.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/184164/cetaphil-gentle-skin-cleanser-125-ml-21-12_2_display_1568180146_4ed67186.jpg"
+      ],
+      "name": "Cetaphil Gentle Skin Cleanser (125 ml)",
+      "desc": "Crafted with passion, skill, fresh ingredients and skin expertise. The Good Vibes Orange Gel helps you get radiant and glowing skin. After all in life, all you need is Love; hydrated, soft skin and Good Vibes!",
+      "about_brand": "value: \"Buy the best WOW beauty products at affordable prices at Shopping.com. Explore a wide range of makeup products and try on a variety of lipstick shades that suits you the most",
+      "price": 140,
+      "offer_price": 140,
+      "offer_label": 0
+    },
+    {
+      "product_id": "1003",
+      "thumb_image": "https://media6.ppl-media.com/tr:h-235,w-235,c-at_max/static/img/product/195821/aroma-magic-neem-and-tea-treeface-wash-100-ml-26_2_display_1524551296_fe5123fe.jpg",
+      "image": [
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/195821/aroma-magic-neem-and-tea-treeface-wash-100-ml-26_2_display_1524551296_fe5123fe.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/195821/aroma-magic-neem-and-tea-treeface-wash-100-ml-26_4_display_1557390978_7b8fe883.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/195821/aroma-magic-neem-and-tea-treeface-wash-100-ml-26_5_display_1557390979_836ac4fa.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/195821/aroma-magic-neem-and-tea-treeface-wash-100-ml-26_6_display_1557390979_90c0947b.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/195821/aroma-magic-neem-and-tea-treeface-wash-100-ml-26_7_display_1557390980_c32c65b1.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/195821/aroma-magic-neem-and-tea-treeface-wash-100-ml-26_8_display_1557390981_9c33fc87.jpg"
+      ],
+      "name": "Aroma Magic Neem & Tea Tree Face Wash (100 ml)",
+      "desc": "Anti-Acne, Antibacterial, Antifungal, Deep Pore Cleansing, Mild Cleansing, Oil Control, Purifying, Refreshing, Skin Brightening, Skin Cell Regeneration, Skin Cleansing, Skin Soothing",
+      "about_brand": "Aroma Magic - Buy Aroma Magic Products Online *Upto 30% Off* in India. Buy Aroma Magic Under Eye Gel, Facial Kit, Face Wash, Sunscreen, Castor oil",
+      "price": 600,
+      "offer_price": 500,
+      "offer_label": 16
+    },
+    {
+      "product_id": "1004",
+      "thumb_image": "https://media6.ppl-media.com/tr:h-235,w-235,c-at_max/static/img/product/142985/aroma-magic-strawberry-face-wash-100-ml-12_1_display_1524551207_376afb38.jpg",
+      "image": [
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/142985/aroma-magic-strawberry-face-wash-100-ml-12_1_display_1524551207_376afb38.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/142985/aroma-magic-strawberry-face-wash-100-ml-12_4_display_1557391003_64bd1170.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/142985/aroma-magic-strawberry-face-wash-100-ml-12_5_display_1557391004_0c009b09.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/142985/aroma-magic-strawberry-face-wash-100-ml-12_6_display_1557391004_bafb0033.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/142985/aroma-magic-strawberry-face-wash-100-ml-12_7_display_1557391005_98fda30b.jpg"
+      ],
+      "name": "Aroma Magic Strawberry Face Wash (100 ml)",
+      "desc": "Antibacterial, Antifungal, Deep Pore Cleansing, Hydrating, Moisturizing, Oil Control, Purifying, Refreshing, Skin Brightening, Skin Cell Regeneration, Skin Cleansing, Skin Exfoliation, Skin Soothing ,Aloe Vera, Aloe Vera Oil, Bulgarian Rose, Geranium, Geranium oil, Rose, Rose Flower, Rose Oil, Rose Water, Strawberry, Wild Rose, Ylang Ylang, Ylang Ylang Oil\"\n",
+      "about_brand": "Aroma Magic - Buy Aroma Magic Products Online *Upto 30% Off* in India. Buy Aroma Magic Under Eye Gel, Facial Kit, Face Wash, Sunscreen, Castor oil",
+      "price": 800,
+      "offer_price": 750,
+      "offer_label": 7
+    },
+    {
+      "product_id": "1005",
+      "thumb_image": "https://media6.ppl-media.com/tr:h-235,w-235,c-at_max/static/img/product/149455/good-vibes-purifying-face-wash-green-tea-120-ml_10_display_1579691052_0eb4f73b.jpg",
+      "image": [
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/149455/good-vibes-purifying-face-wash-green-tea-120-ml_10_display_1579691052_0eb4f73b.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/149455/good-vibes-purifying-face-wash-green-tea-120-ml_11_display_1579691092_74690722.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/149455/good-vibes-purifying-face-wash-green-tea-120-ml_6_display_1579691040_a0433577.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/149455/good-vibes-purifying-face-wash-green-tea-120-ml_7_display_1579691043_112f87b4.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/149455/good-vibes-purifying-face-wash-green-tea-120-ml_8_display_1579691045_0fd3bd83.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/149455/good-vibes-purifying-face-wash-green-tea-120-ml_7_display_1583592348_4a2170c1.jpg",
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/149455/good-vibes-purifying-face-wash-green-tea-120-ml_9_display_1579691047_587a22c1.jpg"
+      ],
+      "name": "Good Vibes Purifying Face Wash - Green Tea (120 ml)",
+      "desc": "The world is slowly switching to eco-friendly products; why not take the plunge into natural beauty as well? Good Vibes is formulated with natural ingredients extracted from fruit and plant pigments and presented to you in a cute small bottle. The result: a range of genuine and effective personal care products. Whatever you are looking for, we have a wide range of products that do as much good for your health as Mother Nature. They are crafted with the utmost care and enriched with antioxidants to bring the goodness of nature straight to your doorstep!. A face wash infused with Green Tea to leave you feeling energized and revitalised! Delicate to touch, yet thoroughly get rids of all impurities for a glowing complexion! Achieve that perfect skin you have always dreamt of with this face wash!\"\n ",
+      "about_brand": "Buy Good Vibes products online on Shopping.com at the best prices. Explore a wide range of natural skincare products such as face washes, serums, scrubs, body lotions, moisturizers and essential oils",
+      "price": 900,
+      "offer_price": 850,
+      "offer_label": 7
+    },
+    {
+      "product_id": "1006",
+      "thumb_image": "https://media6.ppl-media.com/tr:h-235,w-235,c-at_max/static/img/product/133629/lotus-herbals-whiteglow-3-in-1-deep-cleansing-skin-whitening-facial-foam-100-g_1_display_1450500921_451ecfdb.jpg",
+      "image": [
+        "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max/static/img/product/133629/lotus-herbals-whiteglow-3-in-1-deep-cleansing-skin-whitening-facial-foam-100-g_1_display_1450500921_451ecfdb.jpg"
+      ],
+      "name": "Lotus Herbals Whiteglow 3 In 1 Deep Cleansing Skin Whitening Facial Foam (100 g)",
+      "desc": "Lotus Herbals Whiteglow 3 In 1 Deep Cleansing Skin Whitening Facial Foam deep cleanses & brightens the skin.",
+      "about_brand": "Lotus Herbals is India&rsquo;s leading natural cosmetics company. It has combined ancient wisdom from the Vedas with 21st century technology and offers a wide range of over 250 skin care, hair care, sun care and make-up products.</div><div>All of the production systems are subject to stringent quality checks to ensure highest quality products that match or exceed international standards.",
+      "price": 205,
+      "offer_price": 164,
+      "offer_label": 7
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.android.shopping.ui.view.ProductListFragment"
+        tools:layout="@layout/fragment_product_list">
+        <action
+            android:id="@+id/action_mainFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_orderListingFragment"
+            app:destination="@id/orderListingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.android.shopping.ui.view.ProductDetailFragment"
+        tools:layout="@layout/fragment_product_detail">
+        <argument
+            android:name="@string/product_id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_cartFragment"
+            app:destination="@id/cartFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.android.shopping.ui.view.CartFragment"
+        tools:layout="@layout/fragment_product_list">
+
+        <action
+            android:id="@+id/action_cartFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_savedAddressFragment"
+            app:destination="@id/savedAddressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedAddressFragment"
+        android:name="com.android.shopping.ui.view.SavedAddressFragment">
+        <action
+            android:id="@+id/action_savedAddressFragment_to_addNewAddressFragment"
+            app:destination="@id/addNewAddressFragment" />
+        <action
+            android:id="@+id/action_savedAddressFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewAddressFragment"
+        android:name="com.android.shopping.ui.view.AddNewAddressFragment" />
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.android.shopping.ui.view.PaymentFragment">
+        <argument
+            android:name="@string/address_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_paymentFragment_to_orderPlace"
+            app:destination="@id/orderPlace"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderPlace"
+        android:name="com.android.shopping.ui.view.OrderPlaceFragment" />
+    <fragment
+        android:id="@+id/orderListingFragment"
+        android:name="com.android.shopping.ui.view.OrderListingFragment" />
+</navigation>
