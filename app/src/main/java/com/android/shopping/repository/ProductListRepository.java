@@ -121,7 +121,7 @@ public class ProductListRepository {
         }
     }
 
-    public List<ProductItem> getProductItems() {
+    List<ProductItem> getProductItems() {
         return productItems;
     }
 

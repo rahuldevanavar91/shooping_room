@@ -24,7 +24,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class ProductLisViewModel extends AndroidViewModel {
 
-    public MutableLiveData<Resource<List<ProductItem>>> mProductListResult;
+    private MutableLiveData<Resource<List<ProductItem>>> mProductListResult;
     private ProductListRepository mProductListRepository;
     private CompositeDisposable compositeDisposable;
 
