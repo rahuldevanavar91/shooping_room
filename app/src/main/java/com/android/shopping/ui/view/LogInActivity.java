@@ -1,6 +1,5 @@
 package com.android.shopping.ui.view;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +13,7 @@ import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.android.shopping.R;
-import com.android.shopping.util.Resource;
+import com.android.shopping.network.Resource;
 import com.android.shopping.viewModel.LogInViewModel;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;

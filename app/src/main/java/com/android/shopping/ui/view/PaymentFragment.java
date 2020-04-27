@@ -16,8 +16,8 @@ import androidx.navigation.Navigation;
 
 import com.android.shopping.R;
 import com.android.shopping.model.PriceDetails;
-import com.android.shopping.util.Resource;
-import com.android.shopping.util.Status;
+import com.android.shopping.network.Resource;
+import com.android.shopping.network.Status;
 import com.android.shopping.viewModel.PaymentViewModel;
 
 public class PaymentFragment extends BaseFragment {

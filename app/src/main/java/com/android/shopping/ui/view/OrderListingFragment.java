@@ -15,9 +15,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.shopping.R;
-import com.android.shopping.model.OrderDetails;
-import com.android.shopping.ui.adapter.OrderListAdapter;
-import com.android.shopping.util.Resource;
+import com.android.shopping.model.ProductItem;
+import com.android.shopping.network.Resource;
+import com.android.shopping.ui.adapter.ProductListAdapter;
 import com.android.shopping.viewModel.OrderListingViewModel;
 
 import java.util.List;
@@ -48,7 +48,7 @@ public class OrderListingFragment extends BaseFragment {
         setTitle(getString(R.string.my_orders), false);
     }
 
-    private void onChange(Resource<List<OrderDetails>> listResource) {
+    private void onChange(Resource<List<ProductItem>> listResource) {
         switch (listResource.getStatus()) {
             case ERROR:
                 setMessage(listResource.getMessage());
@@ -57,7 +57,7 @@ public class OrderListingFragment extends BaseFragment {
                 if (listResource.getData() != null && !listResource.getData().isEmpty()) {
                     mOrderRecycler.setVisibility(View.VISIBLE);
                     mEmptyLayout.setVisibility(View.GONE);
-                    OrderListAdapter adapter = new OrderListAdapter(getContext(), listResource.getData(), this::onClick);
+                    ProductListAdapter adapter = new ProductListAdapter(getContext(), listResource.getData(), this::onClick);
                     mOrderRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
                     mOrderRecycler.setAdapter(adapter);
                 } else {

@@ -1,4 +1,4 @@
-package com.android.shopping.util;
+package com.android.shopping.network;
 
 public enum Status {
     SUCCESS,

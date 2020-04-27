@@ -7,8 +7,9 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
 import com.android.shopping.model.CartAndQty;
+import com.android.shopping.network.Resource;
 import com.android.shopping.repository.CartRepository;
-import com.android.shopping.util.Resource;
+import com.android.shopping.ui.adapter.CartListAdapter;
 
 import java.util.List;
 
@@ -33,7 +34,7 @@ public class CartViewModel extends AndroidViewModel {
     }
 
     private void getCartDetails() {
-        mCompositeDisposable.add(cartRepository.getCartDetails().subscribeWith(new DisposableSubscriber<List<CartAndQty>>() {
+        mCompositeDisposable.add(cartRepository.getCartDetails(CartListAdapter.VIEW_TYPE_CART_LIST).subscribeWith(new DisposableSubscriber<List<CartAndQty>>() {
             @Override
             public void onNext(List<CartAndQty> details) {
                 mMutableLiveData.setValue(Resource.success(details));
@@ -53,12 +54,6 @@ public class CartViewModel extends AndroidViewModel {
         }));
     }
 
-    @Override
-    protected void onCleared() {
-        mCompositeDisposable.dispose();
-        super.onCleared();
-    }
-
     public void updateQty(int id, int qty) {
         cartRepository.updateQty(id, qty);
     }
@@ -66,4 +61,11 @@ public class CartViewModel extends AndroidViewModel {
     public void removeFromCart(int cartId) {
         cartRepository.removeFromCart(cartId);
     }
+
+    @Override
+    protected void onCleared() {
+        mCompositeDisposable.dispose();
+        super.onCleared();
+    }
+
 }

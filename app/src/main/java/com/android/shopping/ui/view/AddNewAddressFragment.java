@@ -15,7 +15,7 @@ import androidx.navigation.Navigation;
 
 import com.android.shopping.R;
 import com.android.shopping.model.AddressItem;
-import com.android.shopping.util.Resource;
+import com.android.shopping.network.Resource;
 import com.android.shopping.viewModel.AddressViewModel;
 import com.google.android.material.textfield.TextInputEditText;
 

@@ -5,9 +5,11 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.shopping.R;
@@ -34,11 +36,11 @@ public class ProductListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == VIEW_TYPE_PRODUCT_LIST) {
-            return new ViewHolder(LayoutInflater.from(mContext)
+            return new ProductListViewViewHolder(LayoutInflater.from(mContext)
                     .inflate(R.layout.product_list_item, parent, false));
         } else {
             return new OrderListViewHolder(LayoutInflater.from(mContext)
-                    .inflate(R.layout.cart_list_item, parent, false));
+                    .inflate(R.layout.order_list_item, parent, false));
 
         }
     }
@@ -48,12 +50,20 @@ public class ProductListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         holder.itemView.setTag(position);
         ProductItem item = mProductItems.get(position);
         if (item.getViewType() == VIEW_TYPE_PRODUCT_LIST) {
-            ((ViewHolder) holder).setPriceData(mContext, item, position);
+            ((ProductListViewViewHolder) holder).setPriceData(mContext, item, position);
             holder.itemView.setTransitionName("image");
         } else {
-            OrderListViewHolder orderListViewHolder = ((OrderListViewHolder) holder);
-            orderListViewHolder.qty.setText("Qty : " + item.getQty());
-            ((OrderListViewHolder) holder).setPriceData(mContext, item, position);
+            OrderListViewHolder orderListViewHolder = (OrderListViewHolder) holder;
+            orderListViewHolder.orderId.setText(String.valueOf(item.getOrderItem().getId()));
+            orderListViewHolder.orderPlacedDate.setText(item.getOrderItem().getDate());
+            orderListViewHolder.cancelOrder.setTag(position);
+            if (orderListViewHolder.orderListAdapter != null) {
+                orderListViewHolder.orderListAdapter.update(item.getOrderItem().getProductList());
+            } else {
+                orderListViewHolder.orderListAdapter = new CartListAdapter(mContext, item.getOrderItem().getProductList(), mClickListener);
+                orderListViewHolder.mOrderRecycler.setAdapter(orderListViewHolder.orderListAdapter);
+            }
+
         }
     }
 
@@ -62,13 +72,19 @@ public class ProductListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         return mProductItems.size();
     }
 
-    public void update(List<ProductItem> list) {
-        mProductItems = list;
+    public void itemRemoved(List<ProductItem> productItems, int position) {
+        mProductItems = productItems;
+        notifyItemRangeChanged(position, productItems.size());
     }
 
-    public class ViewHolder extends PriceViewHolder implements View.OnClickListener {
+    public void update(List<ProductItem> productItems) {
+        mProductItems = productItems;
+        notifyDataSetChanged();
+    }
 
-        public ViewHolder(@NonNull View itemView) {
+    public class ProductListViewViewHolder extends PriceViewHolder implements View.OnClickListener {
+
+        public ProductListViewViewHolder(@NonNull View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
             float textSize = mContext.getResources().getDimension(R.dimen._12dp);
@@ -91,19 +107,27 @@ public class ProductListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         return mProductItems.get(position).getViewType();
     }
 
-    public class OrderListViewHolder extends PriceViewHolder {
-        private TextView qty;
+    public class OrderListViewHolder extends RecyclerView.ViewHolder {
+        private RecyclerView mOrderRecycler;
+        private CartListAdapter orderListAdapter;
+        private TextView orderPlacedDate;
+        private TextView orderId;
+        private Button cancelOrder;
 
         public OrderListViewHolder(@NonNull View itemView) {
             super(itemView);
-            qty = itemView.findViewById(R.id.qty);
-            itemView.findViewById(R.id.remove).setVisibility(View.GONE);
-            itemView.findViewById(R.id.qty_spinner).setVisibility(View.GONE);
-            RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) itemView.getLayoutParams();
-            params.setMargins(0, 30, 0, 0);
-            itemView.setOnClickListener(v -> {
-                mClickListener.onItemClickListener(v, (int) v.getTag(), mProductItems.get((int) v.getTag()).getProductId());
+            mOrderRecycler = itemView.findViewById(R.id.recycler_view);
+            mOrderRecycler.setLayoutManager(new LinearLayoutManager(mContext));
+            orderPlacedDate = itemView.findViewById(R.id.date);
+            orderId = itemView.findViewById(R.id.order_id);
+            cancelOrder = itemView.findViewById(R.id.button);
+            cancelOrder.setText(R.string.cancel_order);
+            cancelOrder.setOnClickListener(v -> {
+                int position = (int) v.getTag();
+                int id = mProductItems.get(position).getOrderItem().getId();
+                mClickListener.onItemClickListener(v, position, id);
             });
+
         }
     }
 }

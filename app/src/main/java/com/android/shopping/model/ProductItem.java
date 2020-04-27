@@ -1,6 +1,7 @@
 package com.android.shopping.model;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
@@ -21,15 +22,9 @@ public class ProductItem {
 
     @ColumnInfo(name = "view_type")
     private int viewType;
+
     @ColumnInfo(name = "name")
     private String name;
-
-/*
-    @ColumnInfo(name = "id")
-    @PrimaryKey(autoGenerate = true)
-    @NonNull
-    private int id;
-*/
 
     @ColumnInfo(name = "desc")
     private String desc;
@@ -70,7 +65,7 @@ public class ProductItem {
     private int qty;
 
     @Ignore
-    private PriceDetails priceDetails;
+    private OrderDetails orderItem;
 
     public List<String> getImage() {
         return image;
@@ -84,11 +79,6 @@ public class ProductItem {
         return desc;
     }
 
-/*
-    public int getId() {
-        return id;
-    }
-*/
 
     public String getName() {
         return name;
@@ -109,12 +99,6 @@ public class ProductItem {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-
-/*
-    public void setId(int id) {
-        this.id = id;
-    }
-*/
 
     public void setImage(List<String> image) {
         this.image = image;
@@ -172,19 +156,35 @@ public class ProductItem {
         this.qty = qty;
     }
 
-    public PriceDetails getPriceDetails() {
-        return priceDetails;
-    }
-
-    public void setPriceDetails(PriceDetails priceDetails) {
-        this.priceDetails = priceDetails;
-    }
-
     public int getViewType() {
         return viewType;
     }
 
     public void setViewType(int viewType) {
         this.viewType = viewType;
+    }
+
+    @Override
+    public int hashCode() {
+        return 17 * 7 + this.orderItem.hashCode();
+    }
+
+    @Override
+    public boolean equals(@Nullable Object obj) {
+        if (obj instanceof ProductItem) {
+            ProductItem item = (ProductItem) obj;
+            if (item.orderItem != null) {
+                return this.orderItem.getId() == item.orderItem.getId();
+            }
+        }
+        return super.equals(obj);
+    }
+
+    public OrderDetails getOrderItem() {
+        return orderItem;
+    }
+
+    public void setOrderItem(OrderDetails orderItem) {
+        this.orderItem = orderItem;
     }
 }

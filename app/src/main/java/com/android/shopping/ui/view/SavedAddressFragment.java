@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.shopping.R;
 import com.android.shopping.model.AddressItem;
 import com.android.shopping.ui.adapter.AddressListAdapter;
-import com.android.shopping.util.Resource;
+import com.android.shopping.network.Resource;
 import com.android.shopping.viewModel.AddressViewModel;
 
 import java.util.List;

@@ -16,6 +16,7 @@ public class CartAndQty {
     @Ignore
     private PriceDetails priceDetails;
 
+
     public int getQty() {
         return qty;
 
@@ -29,11 +30,9 @@ public class CartAndQty {
         this.productItem = product_list;
     }
 
-
     public void setQty(int qty) {
         this.qty = qty;
     }
-
 
     public int getViewType() {
         return viewType;

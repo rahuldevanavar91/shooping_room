@@ -24,13 +24,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.ViewCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
-import androidx.transition.TransitionInflater;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.android.shopping.R;
 import com.android.shopping.model.ProductItem;
 import com.android.shopping.ui.adapter.ImageViewPagerAdapter;
-import com.android.shopping.util.Resource;
+import com.android.shopping.network.Resource;
 import com.android.shopping.viewModel.ProductDetailViewModel;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;

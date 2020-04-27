@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.shopping.R;
 import com.android.shopping.model.CartAndQty;
 import com.android.shopping.ui.adapter.CartListAdapter;
-import com.android.shopping.util.Resource;
+import com.android.shopping.network.Resource;
 import com.android.shopping.viewModel.CartViewModel;
 
 import java.util.List;

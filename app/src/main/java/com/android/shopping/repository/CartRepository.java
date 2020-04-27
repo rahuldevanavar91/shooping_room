@@ -1,7 +1,6 @@
 package com.android.shopping.repository;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.android.shopping.database.AppDatabase;
 import com.android.shopping.database.ProductResponseDao;
@@ -29,7 +28,7 @@ public class CartRepository {
 
     }
 
-    public Flowable<List<CartAndQty>> getCartDetails() {
+    public Flowable<List<CartAndQty>> getCartDetails(int viewType) {
         return mDao.getCartDetails()
                 .subscribeOn(Schedulers.io())
                 .observeOn(RxJavaBridge.toV2Scheduler(AndroidSchedulers.mainThread()))
@@ -39,7 +38,7 @@ public class CartRepository {
                     if (details != null && !details.isEmpty()) {
                         int totalMrp = 0, totalOfferPrice = 0;
                         for (CartAndQty item : details) {
-                            item.setViewType(CartListAdapter.VIEW_TYPE_LIST);
+                            item.setViewType(viewType);
                             item.getProductItem().setPrice(item.getProductItem().getPrice() * item.getQty());
                             item.getProductItem().setOfferPrice(item.getProductItem().getOfferPrice() * item.getQty());
                             totalMrp += item.getProductItem().getPrice();
@@ -67,12 +66,10 @@ public class CartRepository {
 
                     @Override
                     public void onNext(Integer integer) {
-                        Log.i("Rahul", "removed " + integer);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        Log.i("Rahul", "removed errror " + e.getMessage());
 
                     }
 

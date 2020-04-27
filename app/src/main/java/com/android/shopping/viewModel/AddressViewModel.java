@@ -10,8 +10,8 @@ import com.android.shopping.database.AppDatabase;
 import com.android.shopping.database.ProductResponseDao;
 import com.android.shopping.model.AddressItem;
 import com.android.shopping.ui.adapter.AddressListAdapter;
-import com.android.shopping.util.RequestType;
-import com.android.shopping.util.Resource;
+import com.android.shopping.network.RequestType;
+import com.android.shopping.network.Resource;
 
 import java.util.List;
 
@@ -48,15 +48,15 @@ public class AddressViewModel extends AndroidViewModel {
                             AddressItem addAddress = new AddressItem();
                             addAddress.setViewType(AddressListAdapter.VIEW_TYPE_ADD_ADDRESS);
                             addressItems.add(0, addAddress);
-                            mAddressLiveData.setValue(Resource.success(addressItems, RequestType.getAddresss));
+                            mAddressLiveData.setValue(Resource.success(addressItems, RequestType.getAddress));
                         } else {
-                            mAddressLiveData.setValue(Resource.success(null, RequestType.getAddresss));
+                            mAddressLiveData.setValue(Resource.success(null, RequestType.getAddress));
                         }
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        mAddressLiveData.setValue(Resource.error(e.getMessage(), RequestType.getAddresss));
+                        mAddressLiveData.setValue(Resource.error(e.getMessage(), RequestType.getAddress));
                     }
                 });
     }

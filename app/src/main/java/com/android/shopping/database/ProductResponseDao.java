@@ -18,7 +18,7 @@ import io.reactivex.Single;
 @Dao
 public interface ProductResponseDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertAllProducts(List<ProductItem> productItems);
+    List<Long> insertAllProducts(List<ProductItem> productItems);
 
     @Query("select product_id,thumb_image,name,price,offer_price,offer_label,view_type from product_list")
     Flowable<List<ProductItem>> getListingProducts();
@@ -59,7 +59,7 @@ public interface ProductResponseDao {
     long createOrder(OrderDetails details);
 
     @Query("Select * from order_details")
-    Single<List<OrderDetails>> getOrderDetails();
+    Flowable<List<OrderDetails>> getOrderDetails();
 
 
     @Query("select qty from cart")
@@ -68,4 +68,8 @@ public interface ProductResponseDao {
 
     @Query("SELECT * FROM product_list WHERE product_id IN (SELECT product_id FROM product_list ORDER BY RANDOM() LIMIT 1)")
     ProductItem getRandomProduct();
+
+
+    @Query("DELETE from order_details where order_id=:orderId")
+    int cancelOrder(int orderId);
 }

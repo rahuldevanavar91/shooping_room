@@ -22,8 +22,9 @@ import java.util.List;
 
 public class CartListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public static final int VIEW_TYPE_FOOTER = 2;
-    public static final int VIEW_TYPE_LIST = 1;
-    public static final int VIEW_TYPE_ORDER_LIST = 0;
+    public static final int VIEW_TYPE_CART_LIST = 1;
+    public static final int VIEW_TYPE_ORDER_ITEM = 3;
+
     private final Context mContext;
     private final ItemClickListener mListner;
     private final ArrayAdapter<Integer> spinnerAdapter;
@@ -46,7 +47,7 @@ public class CartListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if (viewType == VIEW_TYPE_LIST || viewType == VIEW_TYPE_ORDER_LIST) {
+        if (viewType == VIEW_TYPE_CART_LIST || viewType == VIEW_TYPE_ORDER_ITEM) {
             return new ListItemViewHolder(LayoutInflater.from(mContext).inflate(R.layout.cart_list_item, parent, false), viewType);
         } else {
             return new FooterViewHolder(LayoutInflater.from(mContext).inflate(R.layout.price_details_layout, parent, false));
@@ -57,11 +58,15 @@ public class CartListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         CartAndQty item = mList.get(position);
-        if (item.getViewType() == VIEW_TYPE_LIST || item.getViewType() == VIEW_TYPE_ORDER_LIST) {
+        if (item.getViewType() == VIEW_TYPE_CART_LIST || item.getViewType() == VIEW_TYPE_ORDER_ITEM) {
             ListItemViewHolder listItemViewHolder = (ListItemViewHolder) holder;
             listItemViewHolder.setPriceData(mContext, item.getProductItem(), position);
-            listItemViewHolder.removeFromCart.setTag(position);
-            setQuantitySpinner(position, (ListItemViewHolder) holder, item.getQty(), 5);
+            if (item.getViewType() == VIEW_TYPE_CART_LIST) {
+                listItemViewHolder.removeFromCart.setTag(position);
+                setQuantitySpinner(position, (ListItemViewHolder) holder, item.getQty(), 5);
+            } else {
+                ((ListItemViewHolder) holder).qty.setText("Qty : " + item.getQty());
+            }
         } else {
             setFooter(item.getPriceDetails(), (FooterViewHolder) holder);
         }
@@ -121,34 +126,36 @@ public class CartListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public class ListItemViewHolder extends PriceViewHolder implements View.OnClickListener {
         private Spinner qtySpinner;
         private View removeFromCart;
+        private TextView qty;
 
         public ListItemViewHolder(@NonNull View itemView, int viewType) {
             super(itemView);
             productImage.setOnClickListener(this);
             qtySpinner = itemView.findViewById(R.id.qty_spinner);
             removeFromCart = itemView.findViewById(R.id.remove);
+            qty = itemView.findViewById(R.id.qty);
             removeFromCart.setOnClickListener(this);
-            if (VIEW_TYPE_ORDER_LIST == viewType) {
-                RecyclerView.LayoutParams param = (RecyclerView.LayoutParams) itemView.getLayoutParams();
-                param.setMargins(10, 0, 10, 0);
-                qtySpinner.setVisibility(View.GONE);
-                qtySpinner.setEnabled(false);
-                qtySpinner.setClickable(false);
-                removeFromCart.setVisibility(View.GONE);
-            } else {
-                qtySpinner.setClickable(true);
-                qtySpinner.setEnabled(true);
-                qtySpinner.setVisibility(View.VISIBLE);
-                removeFromCart.setVisibility(View.VISIBLE);
-            }
-
+            qtySpinner.setClickable(true);
+            qtySpinner.setEnabled(true);
+            qtySpinner.setVisibility(View.VISIBLE);
+            removeFromCart.setVisibility(View.VISIBLE);
             productName.setMaxLines(3);
+            if (viewType == VIEW_TYPE_ORDER_ITEM) {
+                removeFromCart.setVisibility(View.GONE);
+                qtySpinner.setVisibility(View.GONE);
+                RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) itemView.getLayoutParams();
+                params.setMargins(0, 0, 0, 0);
+            }
         }
 
         @Override
         public void onClick(View v) {
             int pos = (int) v.getTag();
-            mListner.onItemClickListener(v, pos, mList.get(pos));
+            if (v.getId() == R.id.remove) {
+                mListner.onItemClickListener(v, pos, mList.get(pos));
+            } else {
+                mListner.onItemClickListener(v, pos, mList.get(pos).getProductItem().getProductId());
+            }
 
         }
     }

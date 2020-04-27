@@ -1,11 +1,11 @@
-package com.android.shopping.util;
+package com.android.shopping.network;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import static com.android.shopping.util.Status.ERROR;
-import static com.android.shopping.util.Status.LOADING;
-import static com.android.shopping.util.Status.SUCCESS;
+import static com.android.shopping.network.Status.ERROR;
+import static com.android.shopping.network.Status.LOADING;
+import static com.android.shopping.network.Status.SUCCESS;
 
 
 public class Resource<T> {
@@ -20,13 +20,21 @@ public class Resource<T> {
     private final String message;
 
     private RequestType requestType;
-
+    private int position;
 
     private Resource(@NonNull Status status, @Nullable T data, @Nullable String message, RequestType requestType) {
         this.status = status;
         this.data = data;
         this.message = message;
         this.requestType = requestType;
+    }
+
+    private Resource(@NonNull Status status, @Nullable T data, @Nullable String message, RequestType requestType, int position) {
+        this.status = status;
+        this.data = data;
+        this.message = message;
+        this.requestType = requestType;
+        this.position = position;
     }
 
 
@@ -36,6 +44,10 @@ public class Resource<T> {
 
     public static <T> Resource<T> success(@NonNull T data) {
         return new Resource<>(SUCCESS, data, null, null);
+    }
+
+    public static <T> Resource<T> success(@NonNull T data, RequestType requestType, int position) {
+        return new Resource<>(SUCCESS, data, null, requestType, position);
     }
 
 
@@ -70,6 +82,10 @@ public class Resource<T> {
     @Nullable
     public T getData() {
         return data;
+    }
+
+    public int getPosition() {
+        return position;
     }
 
     public RequestType getRequestType() {

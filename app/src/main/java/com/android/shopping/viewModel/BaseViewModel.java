@@ -7,7 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
 import com.android.shopping.repository.BaseRepository;
-import com.android.shopping.util.Resource;
+import com.android.shopping.network.Resource;
 
 import hu.akarnokd.rxjava3.bridge.RxJavaBridge;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;

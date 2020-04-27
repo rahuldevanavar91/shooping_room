@@ -1,4 +1,4 @@
-package com.android.shopping.util;
+package com.android.shopping.network;
 
 public enum RequestType {
     addToCart,
@@ -7,5 +7,7 @@ public enum RequestType {
     getCartDetail,
     updateQty,
     removeFromCart,
-    getAddresss, productList
+    getAddress,
+    productList,
+    cancelOrder
 }

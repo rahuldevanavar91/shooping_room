@@ -22,7 +22,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.android.shopping.R;
 import com.android.shopping.util.PreferenceManager;
-import com.android.shopping.util.Resource;
+import com.android.shopping.network.Resource;
 import com.android.shopping.viewModel.BaseViewModel;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;

@@ -8,7 +8,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.android.shopping.model.PriceDetails;
 import com.android.shopping.repository.PaymentRepository;
-import com.android.shopping.util.Resource;
+import com.android.shopping.network.Resource;
 
 import hu.akarnokd.rxjava3.bridge.RxJavaBridge;
 import io.reactivex.disposables.CompositeDisposable;

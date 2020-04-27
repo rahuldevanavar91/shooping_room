@@ -6,12 +6,11 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import com.android.shopping.R;
 import com.android.shopping.database.AppDatabase;
 import com.android.shopping.database.ProductResponseDao;
 import com.android.shopping.model.ProductItem;
-import com.android.shopping.util.RequestType;
-import com.android.shopping.util.Resource;
+import com.android.shopping.network.RequestType;
+import com.android.shopping.network.Resource;
 
 import hu.akarnokd.rxjava3.bridge.RxJavaBridge;
 import io.reactivex.Observable;

@@ -46,5 +46,6 @@
     <string name="login">Login</string>
     <string name="phone_error">Phone number must be 10 digits</string>
     <string name="product_added_to_cart">Product added to cart</string>
+    <string name="cancel_order">Cancel order</string>
 
 </resources>

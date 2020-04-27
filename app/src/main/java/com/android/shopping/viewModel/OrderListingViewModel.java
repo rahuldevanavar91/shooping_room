@@ -9,19 +9,22 @@ import androidx.lifecycle.MutableLiveData;
 import com.android.shopping.database.AppDatabase;
 import com.android.shopping.database.ProductResponseDao;
 import com.android.shopping.model.OrderDetails;
-import com.android.shopping.util.Resource;
+import com.android.shopping.model.ProductItem;
+import com.android.shopping.network.Resource;
+import com.android.shopping.ui.adapter.ProductListAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import hu.akarnokd.rxjava3.bridge.RxJavaBridge;
-import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.subscribers.DisposableSubscriber;
 import io.reactivex.schedulers.Schedulers;
 
 public class OrderListingViewModel extends AndroidViewModel {
 
     private ProductResponseDao mDao;
-    private MutableLiveData<Resource<List<OrderDetails>>> mResult;
+    private MutableLiveData<Resource<List<ProductItem>>> mResult;
 
     public OrderListingViewModel(@NonNull Application application) {
         super(application);
@@ -31,7 +34,7 @@ public class OrderListingViewModel extends AndroidViewModel {
         getOrderList();
     }
 
-    public MutableLiveData<Resource<List<OrderDetails>>> getResult() {
+    public MutableLiveData<Resource<List<ProductItem>>> getResult() {
         return mResult;
     }
 
@@ -39,15 +42,27 @@ public class OrderListingViewModel extends AndroidViewModel {
         mDao.getOrderDetails()
                 .subscribeOn(Schedulers.io())
                 .observeOn(RxJavaBridge.toV2Scheduler(AndroidSchedulers.mainThread()))
-                .subscribe(new DisposableSingleObserver<List<OrderDetails>>() {
+                .subscribe(new DisposableSubscriber<List<OrderDetails>>() {
                     @Override
-                    public void onSuccess(List<OrderDetails> list) {
-                        mResult.setValue(Resource.success(list));
+                    public void onNext(List<OrderDetails> list) {
+                        List<ProductItem> productItems = new ArrayList<>();
+                        for (OrderDetails orderDetails : list) {
+                            ProductItem productItem = new ProductItem();
+                            productItem.setViewType(ProductListAdapter.VIEW_TYPE_ORDER_PLACED);
+                            productItem.setOrderItem(orderDetails);
+                            productItems.add(productItem);
+                        }
+                        mResult.setValue(Resource.success(productItems));
+
                     }
 
                     @Override
-                    public void onError(Throwable e) {
-                        mResult.setValue(Resource.error(e.getMessage()));
+                    public void onError(Throwable t) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
 
                     }
                 });

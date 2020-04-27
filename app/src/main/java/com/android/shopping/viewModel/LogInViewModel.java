@@ -9,7 +9,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
 import com.android.shopping.util.PreferenceManager;
-import com.android.shopping.util.Resource;
+import com.android.shopping.network.Resource;
 
 public class LogInViewModel extends AndroidViewModel {
 
